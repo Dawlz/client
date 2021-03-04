@@ -1,6 +1,7 @@
 import { Router } from "@reach/router"
 import ShowProducts from "./component/showallproducts";
 import ProductView from "./component/productviewPage";
+import Cart from "./component/cart";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <Router>
         <ShowProducts path = "/" />
         <ProductView path = "/view/:idx" />
+        <Cart path = "/checkout" />
       </Router>
     </div>
   );

@@ -1,11 +1,10 @@
 // import { navigate } from '@reach/router';
 import React, { useState, useEffect } from 'react';
-import { getProduct, addToCart, getCart} from './data';
+import { getProduct, addToCart} from './data';
 
 const ProductView = (props) => {
 
     const [productDisplayed, setProductDisplayed] = useState()
-
 
     useEffect(()=> {
         const prod = getProduct(props.idx)
@@ -14,7 +13,6 @@ const ProductView = (props) => {
 
     const addOrContinueButton = () => {
         addToCart(productDisplayed);
-        console.log(getCart())
     }
 
 
