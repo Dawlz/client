@@ -26,9 +26,9 @@ const Navbar = (props) => {
                     </Link>
                 </li>
             </ul>
-            <ul className="navbar-nav ms-auto mb-2">
+            <ul className="navbar-nav ms-sm-auto mb-2">
                 <li className="nav-item">
-                    <img src="../Images/search.svg" alt="search" className= "me-2"/>
+                    <img src="../Images/search.svg" alt="search"/>
                 </li>
                 <li className="nav-item">
                     <Link to= {'/checkout'} className = "link-info">
