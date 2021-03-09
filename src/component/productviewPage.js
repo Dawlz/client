@@ -19,11 +19,17 @@ const ProductView = (props) => {
     useEffect(()=> {
         const prod = getProduct(props.idx)
         setProductDisplayed(prod);
+        console.log(prod.favorite)
     }, [props])
 
     const addOrContinueButton = () => {
         addToCart(productDisplayed);
         setAddedToCart(true)
+    }
+
+    const fav = () => {
+        productDisplayed.favorite = !productDisplayed.favorite;
+        setProductDisplayed({...productDisplayed})
     }
 
     const continueAction = () => {
@@ -40,7 +46,7 @@ const ProductView = (props) => {
                 <div style = {{backgroundColor: productDisplayed.bgColor, marginTop: "20px", padding: "10px"}}>
                     <img style={{width: "100%"}} src = {productDisplayed.pictures[0]} alt={productDisplayed.name} />
                     <h5>{ productDisplayed.name }</h5>
-                    <p style= {{width: "100%"}}> <span> N {productDisplayed.price} </span> <span> {productDisplayed.brief} </span> <span style={{float: "right"}} > {productDisplayed.favorite ? "\uD83D\uDC93" : "\u2661" } </span> </p>
+                    <p style= {{width: "100%"}}> <span> N {productDisplayed.price} </span> <span> {productDisplayed.brief} </span> <span onClick = {fav} style={{float: "right", cursor: "pointer", fontSize: "22px"}} > {productDisplayed.favorite === true ? "\uD83D\uDC93" : "\u2661" } </span> </p>
                 </div>
                 <p> {productDisplayed.description} </p>
                 <p>This item is not returnable. Items like inner-wear, personal care, make-up, socks and certain accessories do not come under our return policy. <i style= {{color: "red"}}>Read More</i>.</p>
